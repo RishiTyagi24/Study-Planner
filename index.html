@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyMate | Student Study Planner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#">Study<span>Mate</span></a>
+    <p>A little progress every day.</p>
+  </header>
+
+  <main class="container">
+    <section class="welcome">
+      <div>
+        <p class="eyebrow">YOUR PERSONAL STUDY SPACE</p>
+        <h1>Plan your day.<br><span>Reach your goals.</span></h1>
+        <p class="intro">Keep track of assignments, revision and the small tasks that move you forward.</p>
+      </div>
+      <div class="date-card">
+        <span id="dayName">Today</span>
+        <strong id="currentDate">Loading date...</strong>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Task statistics">
+      <article class="stat-card">
+        <span class="stat-icon">📚</span>
+        <div><p>Total tasks</p><strong id="totalCount">0</strong></div>
+      </article>
+      <article class="stat-card">
+        <span class="stat-icon">⏳</span>
+        <div><p>Pending</p><strong id="pendingCount">0</strong></div>
+      </article>
+      <article class="stat-card">
+        <span class="stat-icon">✓</span>
+        <div><p>Completed</p><strong id="completedCount">0</strong></div>
+      </article>
+    </section>
+
+    <section class="planner">
+      <div class="section-heading">
+        <div><p class="eyebrow">STAY ON TRACK</p><h2>My study tasks</h2></div>
+        <span class="task-label" id="taskLabel">0 tasks</span>
+      </div>
+
+      <form id="taskForm" class="task-form">
+        <div class="field title-field">
+          <label for="taskInput">What do you need to do?</label>
+          <input id="taskInput" type="text" placeholder="e.g. Revise calculus chapter 2" maxlength="80" required>
+        </div>
+        <div class="field">
+          <label for="subjectInput">Subject</label>
+          <select id="subjectInput">
+            <option value="General">General</option>
+            <option>Mathematics</option>
+            <option>Programming</option>
+            <option>Physics</option>
+            <option>Electronics</option>
+            <option>English</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="priorityInput">Priority</label>
+          <select id="priorityInput">
+            <option value="Normal">Normal</option>
+            <option value="High">High</option>
+            <option value="Low">Low</option>
+          </select>
+        </div>
+        <button class="add-button" type="submit">+ Add task</button>
+      </form>
+
+      <div class="toolbar">
+        <div class="filters" aria-label="Filter tasks">
+          <button class="filter active" type="button" data-filter="all">All</button>
+          <button class="filter" type="button" data-filter="pending">Pending</button>
+          <button class="filter" type="button" data-filter="completed">Completed</button>
+        </div>
+        <span id="visibleCount" class="muted">Showing 0 tasks</span>
+      </div>
+
+      <ul id="taskList" class="task-list"></ul>
+      <p id="emptyMessage" class="empty-message">No tasks here yet. Add your first task above!</p>
+    </section>
+
+    <footer>Made with HTML, CSS & JavaScript · Your tasks stay in this browser.</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
